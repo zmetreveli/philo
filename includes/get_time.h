@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.h                                       :+:      :+:    :+:   */
+/*   get_time.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 14:28:28 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/19 15:15:33 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/19 15:14:19 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/19 15:16:20 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_ARGS_h
-# define CHECK_ARGS_h
+#ifndef GET_TIME_H
+#define GET_TIME_H
 
-size_t  ft_strlen(char *str);
-int	ft_whitespace(char c);
-int ft_isnum(char *str);
-int ft_atoi(char *str);
-int check_args(int ac, char **av);
+int ft_usleep(size_t milliseconds);
+
 
 #endif

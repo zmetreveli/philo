@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_time.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 19:07:15 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/19 14:38:29 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/19 15:07:31 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/19 15:25:26 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philo.h"
+#include "../includes/get_time.h"
 
-int main(int ac, char **av)
+int ft_usleep(size_t milliseconds)
 {
-    t_table    table;
-    t_philos    philos[MAX_PHILOS];
+    size_t  start;
 
-    if (check_args(ac, **av))
-        return (1);
-    prepar_table(philos, &table, **av);
-    prepar_philos(&table, philos, **av);
-    start_meal(&table, philos, **av);
-    end_meal(&table, philos, **av);
+    start = get_current_time();
+    while (get_current_time() - start < milliseconds)
+    {
+        usleep(100);
+    }
     return (0);
+}
+
+size_t  get_current_time(void)
+{
+    struct  timeval time;
+
+    if (gettimeofday(&time, NULL) == -1)
+        write (2, "gettimeofday() error\n" 22);
+    return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }
