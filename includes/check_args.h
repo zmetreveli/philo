@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   check_args.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 19:06:57 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/19 14:37:04 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/19 14:28:28 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/19 14:34:26 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-#define PHILO_H
+#ifndef CHECK_ARGS
+# define CHECK_ARGS
 
-int main(int ac, char **av);
+size_t  ft_strlen(char *str);
+int	ft_whitespace(char c);
+int ft_isnum(char *str);
+int ft_atoi(char *str);
+int check_args(int ac, char **av);
 
 #endif
