@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 21:16:43 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/20 22:02:54 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/21 00:36:24 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,27 @@ void    start_meal(t_table *table, t_philos *philos, char **av)
         i++;
     }
     pthread_join(table->table, NULL);
+}
+
+void    end_meal(t_table *table, t_philos *philos, char **av)
+{
+    size_t  i;
+
+    i = 0;
+    (void)av;
+    pthread_mutex_destroy(&table->mutex);
+    pthread_mutex_destroy(table->deadtex);
+    free(table->deadtex);
+    pthread_mutex_destroy(table->eatentex);
+    free(table->eatentex);
+    while (i < table->philos-num_philos)
+    {
+        pthread_mutex_destroy(philos[i].mealtex);
+        free(philos[i].mealtex);
+        pthread_mutex_destroy(philos[i].eatentex);
+        free(philos[i].eatentex);
+        pthread_mutex_destroy(&table.forks[i]);
+        i++;
+    }
+    free(table->forks);
 }
