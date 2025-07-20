@@ -6,13 +6,13 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 21:16:43 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/21 00:36:24 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/21 00:47:27 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pthread.h>
+# include "../includes/colors.h"
 #include "../includes/structs.h"
-# include "colors.h"
+#include <pthread.h>
 
 void    start_meal(t_table *table, t_philos *philos, char **av)
 {

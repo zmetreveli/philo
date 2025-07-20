@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handle_meal.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 19:07:15 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/21 00:49:12 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/21 00:38:02 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/21 00:40:30 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/colors.h"
-#include "../includes/philo.h"
+#ifndef HANDLE_MEAL_H
+#define HANDLE_MEAL_H
 
-int main(int ac, char **av)
-{
-    t_table    table;
-    t_philos    philos[MAX_PHILOS];
+void    start_meal(t_table *table, t_philos *philos, char **av);
+void    end_meal(t_table *table, t_philos *philos, char **av);
 
-    if (check_args(ac, **av))
-        return (1);
-    prepar_table(philos, &table, **av);
-    prepar_philos(&table, philos, **av);
-    start_meal(&table, philos, **av);
-    end_meal(&table, philos, **av);
-    return (0);
-}
+#endif

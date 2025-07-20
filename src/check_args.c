@@ -6,10 +6,11 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:56:43 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/19 14:34:47 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/21 00:46:53 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/colors.h"
 #include "../includes/check_args.h"
 
 size_t  ft_strlen(char *str)

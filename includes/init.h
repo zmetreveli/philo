@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 19:07:15 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/21 00:49:12 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/21 00:58:33 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/21 01:05:52 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/colors.h"
-#include "../includes/philo.h"
+#ifndef INIT_H
+#define INIT_H
 
-int main(int ac, char **av)
-{
-    t_table    table;
-    t_philos    philos[MAX_PHILOS];
+# include <pthread.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <sys/time.h>
+# include <stdlib.h>
+# include "../includes/colors.h"
+# include "../includes/structs.h"
 
-    if (check_args(ac, **av))
-        return (1);
-    prepar_table(philos, &table, **av);
-    prepar_philos(&table, philos, **av);
-    start_meal(&table, philos, **av);
-    end_meal(&table, philos, **av);
-    return (0);
-}
+void	philos_input_data(t_philos *philos, char **av);
+void	init_philos(t_table *table, t_philos *philos, char **av);
+void	prepare_table(t_philos *philos, t_table *table, char **av);
+
+#endif
