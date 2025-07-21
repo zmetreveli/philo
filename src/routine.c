@@ -6,11 +6,11 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 22:43:08 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/21 23:01:26 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/21 23:57:32 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    *gluttony(char *arg)
+void    *routine(void *arg)
 {
     t_philos *philo;
 
@@ -28,3 +28,10 @@ void    *gluttony(char *arg)
     return (arg);
 }
 
+void    gluttony(t_philos *philo)
+{
+    pthread_mutex_t *own_fork;
+    pthread_mutex_t *next_fork;
+
+    
+}
