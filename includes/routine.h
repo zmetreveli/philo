@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.h                                       :+:      :+:    :+:   */
+/*   routine.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 14:28:28 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/22 02:37:45 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/22 02:28:36 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/22 02:38:27 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_ARGS_h
-# define CHECK_ARGS_h
+#ifndef ROUTINE_H
+#define ROUTINE_H
 
 # include <pthread.h>
 # include <stdio.h>
@@ -21,10 +21,9 @@
 # include "../includes/colors.h"
 # include "../includes/structs.h"
 
-size_t  ft_strlen(char *str);
-int	ft_whitespace(char c);
-int ft_isnum(char *str);
-int ft_atoi(char *str);
-int check_args(int ac, char **av);
+void    *routine(void *arg);
+void    gluttony(t_philos *philo);
+void    rivotril(t_philos *philo);
+void    sophos(t_philos *philo);
 
 #endif

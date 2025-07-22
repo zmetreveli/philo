@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.h                                       :+:      :+:    :+:   */
+/*   waiter.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 14:28:28 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/22 02:37:45 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/22 02:34:55 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/22 02:38:54 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_ARGS_h
-# define CHECK_ARGS_h
+#ifndef WAITER_H
+#define WAITER_H
 
 # include <pthread.h>
 # include <stdio.h>
@@ -21,10 +21,10 @@
 # include "../includes/colors.h"
 # include "../includes/structs.h"
 
-size_t  ft_strlen(char *str);
-int	ft_whitespace(char c);
-int ft_isnum(char *str);
-int ft_atoi(char *str);
-int check_args(int ac, char **av);
+int philosophers_state(t_philos *philo);
+int philosopher_dead(t_philos *philo);
+int philo_dead(t_philos *philo);
+int check_eaten(t_philos *philo);
+void    *waiter(void *arg);
 
 #endif

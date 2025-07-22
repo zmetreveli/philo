@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.h                                       :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 14:28:28 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/22 02:37:45 by zmetreve         ###   ########.fr       */
+/*   Created: 2025/07/22 02:32:12 by zmetreve          #+#    #+#             */
+/*   Updated: 2025/07/22 02:38:44 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_ARGS_h
-# define CHECK_ARGS_h
+#ifndef UTILS_H
+#define UTILS_H
 
 # include <pthread.h>
 # include <stdio.h>
@@ -21,10 +21,9 @@
 # include "../includes/colors.h"
 # include "../includes/structs.h"
 
-size_t  ft_strlen(char *str);
-int	ft_whitespace(char c);
-int ft_isnum(char *str);
-int ft_atoi(char *str);
-int check_args(int ac, char **av);
+int ft_one_philo(t_philos *philo);
+int	ft_strcmp(char *s1, char *s2);
+void	print_philos(t_philos *philo);
+void	thread_printf(t_philos *philo, char	*msg);
 
 #endif
