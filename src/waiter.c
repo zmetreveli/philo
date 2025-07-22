@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 01:16:50 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/22 01:57:45 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/22 02:24:17 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,40 @@ int philo_dead(t_philos *philo)
         i++;
     }
     return (0);
+}
+
+int check_eaten(t_philos *philo)
+{
+    size_t  i;
+    int     total;
+
+    i = 0;
+    total = 0;
+    while (i < philo[i].num_philos)
+    {
+        pthread_mutex_lock(philo->table->eatentex);
+        if (philo[i].eaten >= philo->table->num_of_meals && philo->table->num_of_meals != -1)
+            total++;
+        pthread_mutex_unlock(philo->table->eatentex);
+        i++;
+    }
+    if (total == (int)philo[0].num_philos)
+    {
+        pthread_mutex_lock(philo->table->deadtex);
+        *philo->dead = 1;
+        pthread_mutex_unlock(philo->table->deadtex);
+        return (1);
+    }
+    return (0);
+}
+
+void    *waiter(void *arg)
+{
+    t_philos   *philos;
+
+    philos = (t_philos *)arg;
+    while (1)
+        if (philo_dead(philos) || check_eaten(philos))
+            break ;
+    return (arg);
 }
