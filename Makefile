@@ -6,7 +6,7 @@
 #    By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/18 18:59:50 by zmetreve          #+#    #+#              #
-#    Updated: 2025/07/24 21:09:26 by zmetreve         ###   ########.fr        #
+#    Updated: 2025/07/24 21:31:52 by zmetreve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,24 +15,24 @@ NAME = philo
 CC = cc
 FLAGS = -Wall -Wextra -Werror -g
 
-SRCS =	check_args.c \
-		  get_time.c \
-		  hendle_meal.c \
-		  init.c \
-		  routine.c \
-		  utils.c \
-		  waiter.c \
-		  main.c
+SRCS =	src/check_args.c \
+		  src/get_time.c \
+		  src/handle_meal.c \
+		  src/init.c \
+		  src/routine.c \
+		  src/utils.c \
+		  src/waiter.c \
+		  src/main.c \
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c Makefile check_args.h colors.h get_time.h init.h philo.h routine.h structs.h utils.h waiter.h
-		$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c includes/check_args.h includes/colors.h includes/get_time.h includes/init.h includes/philo.h includes/routine.h includes/structs.h includes/utils.h includes/waiter.h Makefile
+		$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS)
