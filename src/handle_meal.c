@@ -6,13 +6,25 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 21:16:43 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/21 00:47:27 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:55:00 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <pthread.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <sys/time.h>
+# include <stdlib.h>
 # include "../includes/colors.h"
-#include "../includes/structs.h"
-#include <pthread.h>
+# include "../includes/structs.h"
+#include "../includes/check_args.h"
+#include "../includes/get_time.h"
+#include "../includes/handle_meal.h"
+#include "../includes/init.h"
+#include "../includes/philo.h"
+#include "../includes/routine.h"
+#include "../includes/utils.h"
+#include "../includes/waiter.h"
 
 void    start_meal(t_table *table, t_philos *philos, char **av)
 {
