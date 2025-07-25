@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:07:31 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/24 20:54:52 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/25 16:29:54 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,21 @@
 #include "../includes/utils.h"
 #include "../includes/waiter.h"
 
-int ft_usleep(size_t milliseconds)
+int	ft_usleep(size_t milliseconds)
 {
-    size_t  start;
+	size_t	start;
 
-    start = get_current_time();
-    while (get_current_time() - start < milliseconds)
-    {
-        usleep(100);
-    }
-    return (0);
+	start = get_current_time();
+	while ((get_current_time() - start) < milliseconds)
+		usleep(100);
+	return (0);
 }
 
-size_t  get_current_time(void)
+size_t	get_current_time(void)
 {
-    struct  timeval time;
+	struct timeval	time;
 
-    if (gettimeofday(&time, NULL) == -1)
-        write (2, "gettimeofday() error\n", 22);
-    return (time.tv_sec * 1000 + time.tv_usec / 1000);
+	if (gettimeofday(&time, NULL) == -1)
+		write(2, "gettimeofday() error\n", 22);
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }

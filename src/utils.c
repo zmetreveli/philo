@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:29:14 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/24 20:55:25 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/25 16:41:11 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@
 #include "../includes/utils.h"
 #include "../includes/waiter.h"
 
-int ft_one_philo(t_philos *philo)
+int	ft_one_philo(t_philos *philo)
 {
-    ft_usleep(1);
-    if (philo->num_philos == 1)
-    {
-        thread_printf(philo, "has taken a fork");
-        ft_usleep(philo->time_die);
-        thread_printf(philo, "died");
-        pthread_mutex_lock(philo->table->deadtex);
-        *philo->dead = 1;
-        pthread_mutex_unlock(philo->table->deadtex);
-        return (0);
-    }
-    return (0);
+	ft_usleep(1);
+	if (philo->num_philos == 1)
+	{
+		thread_printf(philo, "has taken a fork");
+		ft_usleep(philo->time_die);
+		thread_printf(philo, "died");
+		pthread_mutex_lock(philo->table->deadtex);
+		*philo->dead = 1;
+		pthread_mutex_unlock(philo->table->deadtex);
+		return (0);
+	}
+	return (0);
 }
 
 int	ft_strcmp(char *s1, char *s2)
