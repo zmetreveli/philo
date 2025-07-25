@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 01:16:50 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/24 20:55:33 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:51:52 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int philo_dead(t_philos *philo)
     i = 0;
     while (i < philo[0].num_philos)
     {
-        if (philosophers_dead(&philo[i]))
+        if (philosopher_dead(&philo[i]))
         {
             pthread_mutex_lock(philo->table->deadtex);
             if (!*philo->dead)

@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:07:15 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/24 20:55:13 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/24 22:02:28 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int main(int ac, char **av)
     t_table    table;
     t_philos    philos[MAX_PHILOS];
 
-    if (check_args(ac, **av))
+    if (check_args(ac, av))
         return (1);
-    prepar_table(philos, &table, **av);
-    prepar_philos(&table, philos, **av);
-    start_meal(&table, philos, **av);
-    end_meal(&table, philos, **av);
+    prepare_table(philos, &table, av);
+    init_philos(&table, philos, av);
+    start_meal(&table, philos, av);
+    end_meal(&table, philos, av);
     return (0);
 }

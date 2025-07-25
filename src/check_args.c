@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 19:56:43 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/24 20:54:45 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/24 22:14:06 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,13 @@ int check_args(int ac, char **av)
         return (printf(RED"Usage:\n"GREEN"./philo"" 5 500 600 800\n" DEFAULT));
     if (ft_atoi(av[1]) <= 0 || ft_isnum(av[1]) > MAX_PHILOS)
         return (printf(RED"Invalid number of arguments\n" DEFAULT));
-    if (ft_atoi(av[2]) <= 0 || ft_isnum(av[2]))
+    if (ft_atoi(av[2]) <= 0 || !ft_isnum(av[2]))
         return (printf(RED"Invalid time to die\n" DEFAULT));
-    if (ft_atoi(av[3]) <= 0 || ft_isnum(av[3]))
+    if (ft_atoi(av[3]) <= 0 || !ft_isnum(av[3]))
        return (printf(RED"invalid time to eat\n" DEFAULT));
-    if (ft_atoi(av[4]) <= 0 || ft_isnum(av[4]))
+    if (ft_atoi(av[4]) <= 0 || !ft_isnum(av[4]))
         return (printf(RED"Invalid time to sleep\n" DEFAULT));
-    if (ac == 6 && (ft_atoi(av[5]) <= 0 || ft_isnum(av[5])))
+    if (ac == 6 && (ft_atoi(av[5]) <= 0 || !ft_isnum(av[5])))
         return (printf(RED"Invalid eat times\n" DEFAULT));
     return (0);
 }

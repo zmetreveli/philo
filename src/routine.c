@@ -6,7 +6,7 @@
 /*   By: zmetreve <zmetreve@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 22:43:08 by zmetreve          #+#    #+#             */
-/*   Updated: 2025/07/24 20:59:05 by zmetreve         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:45:16 by zmetreve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    *routine(void *arg)
         ft_usleep(1);
     if (ft_one_philo(philo))
         return (arg);
-    while (!philosopers_state(philo))
+    while (!philosophers_state(philo))
     {
         gluttony(philo);
         rivotril(philo);
@@ -80,5 +80,5 @@ void    rivotril(t_philos *philo)
 
 void    sophos(t_philos *philo)
 {
-    threas_printf(philo, "is thinking");
+    thread_printf(philo, "is thinking");
 }
