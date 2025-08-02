@@ -179,5 +179,5 @@ make bonus
 
 * [42 Project PDF](https://cdn.intra.42.fr/pdf/pdf/73266/en.subject.pdf)
 * [CodeVault Threads in C](https://www.youtube.com/playlist?list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY)
-* [What is a mutex? (YouTube)](https://www.youtube.com/watch?v=K3P2hsW2tgI)
+* [What is a mutex? (YouTube)]([https://www.youtube.com/watch?v=K3P2hsW2tgI](https://www.youtube.com/watch?v=oq29KUy29iQ))
 * [Race Conditions Explained](https://www.youtube.com/watch?v=9TYKQTuZJpY)
